@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeGuard - Women's Safety App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>SafeGuard</h1>
+            <span>Personal safety, always with you</span>
+        </div>
+
+        <div id="signin-page" class="page">
+            <div class="auth-container">
+                <h2 style="margin-bottom: 1.25rem;">Sign In</h2>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Your password">
+                </div>
+
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+
+                <button onclick="signIn()">Sign In</button>
+
+                <div class="switch-page">
+                    <span>Don't have an account? </span>
+                    <a onclick="navigateTo('signup-page')">Sign Up</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="signup-page" class="page">
+            <div class="auth-container">
+                <h2 style="margin-bottom: 1.25rem;">Create Account</h2>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" placeholder="Your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" placeholder="Your email">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Your phone number">
+                </div>
+
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" placeholder="Confirm your password">
+                </div>
+
+                <button onclick="signUp()">Create Account</button>
+
+                <div class="switch-page">
+                    <span>Already have an account? </span>
+                    <a onclick="navigateTo('signin-page')">Sign In</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="home-page" class="page">
+            <div class="page-header">
+                <div class="page-title">Welcome, Sarah</div>
+                <div style="font-size: 1.5rem; cursor: pointer;">⚙️</div>
+            </div>
+
+            <button class="sos-button" onclick="activateSOS()">SOS EMERGENCY</button>
+
+            <div class="quick-actions">
+                <div class="action-card">
+                    <div class="action-icon">🚶</div>
+                    <div>Safe Route</div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">👥</div>
+                    <div>Guardians</div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">🔔</div>
+                    <div>Alerts</div>
+                </div>
+                <div class="action-card">
+                    <div class="action-icon">📞</div>
+                    <div>Contacts</div>
+                </div>
+            </div>
+
+            <div class="features">
+                <h2>Safety Tips</h2>
+                <div class="feature">
+                    <h3>Stay Alert in Public</h3>
+                    <p>Keep your head up and be aware of your surroundings at all times.</p>
+                </div>
+                <div class="feature">
+                    <h3>Share Your Location</h3>
+                    <p>Let trusted contacts know your plans and when to expect you back.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="map-page" class="page">
+            <div class="page-header">
+                <div class="page-title">Safe Route Map</div>
+                <div style="font-size: 1.5rem; cursor: pointer;">⚙️</div>
+            </div>
+
+            <div class="map-container">
+                Interactive Map would be displayed here
+            </div>
+
+            <div class="feature">
+                <h3>Current Route</h3>
+                <p>Home → Park → Coffee Shop → Office</p>
+                <p style="color: #666; margin-top: 0.625rem;">Estimated time: 25 mins</p>
+            </div>
+
+            <button style="margin-top: 1.25rem;">Start Navigation</button>
+
+            <div class="features">
+                <h2>Nearby Safe Zones</h2>
+                <div class="feature">
+                    <h3>Police Station</h3>
+                    <p>0.5 miles away - 10 min walk</p>
+                </div>
+                <div class="feature">
+                    <h3>24/7 Store</h3>
+                    <p>0.2 miles away - 4 min walk</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="alerts-page" class="page">
+            <div class="page-header">
+                <div class="page-title">Safety Alerts</div>
+                <div style="font-size: 1.5rem; cursor: pointer;">⚙️</div>
+            </div>
+
+            <div class="alert-item">
+                <div class="alert-header">
+                    <div class="alert-title">Community Alert</div>
+                    <div class="alert-time">Today, 2:30 PM</div>
+                </div>
+                <p>Suspicious activity reported near Central Park. Authorities have been notified.</p>
+            </div>
+
+            <div class="alert-item">
+                <div class="alert-header">
+                    <div class="alert-title">Weather Warning</div>
+                    <div class="alert-time">Today, 10:15 AM</div>
+                </div>
+                <p>Heavy rainfall expected this evening. Plan your commute accordingly.</p>
+            </div>
+
+            <div class="alert-item">
+                <div class="alert-header">
+                    <div class="alert-title">Guardian Alert</div>
+                    <div class="alert-time">Yesterday, 8:45 PM</div>
+                </div>
+                <p>Emma has reached home safely.</p>
+            </div>
+
+            <button style="margin-top: 1.25rem;">Send Alert to Guardians</button>
+        </div>
+
+        <div id="profile-page" class="page">
+            <div class="page-header">
+                <div class="page-title">Your Profile</div>
+                <div style="font-size: 1.5rem; cursor: pointer;">⚙️</div>
+            </div>
+
+            <div class="profile-section">
+                <div class="profile-header">
+                    <div class="profile-pic">👤</div>
+                    <div class="profile-info">
+                        <h3>Sarah Johnson</h3>
+                        <p>sarah.j@example.com</p>
+                        <p>(555) 123-4567</p>
+                    </div>
+                </div>
+
+                <button>Edit Profile</button>
+            </div>
+
+            <div class="profile-section">
+                <h3 style="margin-bottom: 0.9375rem;">My Guardians</h3>
+                <div class="feature">
+                    <h3>Emma Davis</h3>
+                    <p>Sister • (555) 987-6543</p>
+                </div>
+                <div class="feature">
+                    <h3>Michael Smith</h3>
+                    <p>Friend • (555) 456-7890</p>
+                </div>
+                <button>Add Guardian</button>
+            </div>
+
+            <div class="profile-section profile-menu">
+                <div class="menu-item">
+                    <div>Notification Settings</div>
+                    <div>›</div>
+                </div>
+                <div class="menu-item">
+                    <div>Privacy Settings</div>
+                    <div>›</div>
+                </div>
+                <div class="menu-item">
+                    <div>Emergency Contacts</div>
+                    <div>›</div>
+                </div>
+                <div class="menu-item">
+                    <div>Help & Support</div>
+                    <div>›</div>
+                </div>
+                <div class="menu-item" style="color: #ff0000;">
+                    <div>Sign Out</div>
+                    <div>›</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sos-modal" class="sos-modal">
+            <div class="sos-timer-container">
+                <div class="sos-timer-title">EMERGENCY SOS</div>
+                <div class="sos-message">Sending emergency alert in:</div>
+                <div id="sos-timer-count" class="sos-timer-count">30</div>
+                <button class="sos-cancel-btn" onclick="cancelSOS()">CANCEL</button>
+            </div>
+        </div>
+
+        <div class="navbar">
+            <div class="nav-item active" onclick="navigateTo('home-page'); setActiveNav(this)">
+                <div class="nav-icon">🏠</div>
+                <div>Home</div>
+            </div>
+            <div class="nav-item" onclick="navigateTo('map-page'); setActiveNav(this)">
+                <div class="nav-icon">🗺️</div>
+                <div>Map</div>
+            </div>
+            <div class="nav-item" onclick="navigateTo('alerts-page'); setActiveNav(this)">
+                <div class="nav-icon">🔔</div>
+                <div>Alerts</div>
+            </div>
+            <div class="nav-item" onclick="navigateTo('profile-page'); setActiveNav(this)">
+                <div class="nav-icon">👤</div>
+                <div>Profile</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js">
+
+    </script>
+</body>
+</html>
